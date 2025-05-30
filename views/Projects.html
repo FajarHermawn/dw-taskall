@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 1rem;
+      }
+      .project-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      }
+      .tech-badge {
+        background-color: #f3f4f6;
+        color: #111827;
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gray-400">
+      <!-- NAVBAR  -->
+      <div class="justify-between flex px-4 py-3 bg-gray-700">
+        <nav class="flex gap-10 ml-5 text-white">
+          <a href="#"><img src="/asset/image/Logo.png" alt="" class="w-10" /></a>
+          <a href="/views/Indeks.html">Home</a>
+          <a href="/views/Projects.html">Projects</a>
+        </nav>
+        <a
+          href="/views/Contactme.html"
+          class="bg-black rounded-lg px-3 py-1 mr-9 text-white"
+          >Contact Me</a
+        >
+      </div>
+
+      <!-- FORM PROJECTS  -->
+      <div class="m-10"></div>
+      <div class="justify-items-center">
+        <h1 class="text-5xl font-medium font-bold">ADD MY PROJECTS</h1>
+      </div>
+
+      <form
+        class="container mx-auto px-30 bg-gray-200 shadow-lg mb-5 mt-4 rounded-lg"
+        id="project-form"
+      >
+        <div class="px-3 py-3">
+          <label for="project-name" class="text-3xl text-gray-900"
+            >Project name</label
+          >
+          <input
+            id="project-name"
+            type="text"
+            required
+            class="block w-full shadow-lg rounded-md bg-white py-2 pl-2 text-base text-gray-900 outline-2 outline-gray-500 placeholder:text-gray-400"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 gap-x-4 sm:grid-cols-6">
+          <div class="sm:col-span-3 px-3 py-3">
+            <label for="start-date" class="text-3xl text-gray-900"
+              >Start date</label
+            >
+            <input
+              type="date"
+              id="start-date"
+              class="block w-full shadow-lg rounded-md bg-white pl-2 py-2 text-base text-gray-900 outline-2 outline-gray-500 placeholder:text-gray-400"
+            />
+          </div>
+
+          <div class="sm:col-span-3 px-3 py-3">
+            <label for="end-date" class="text-3xl text-gray-900"
+              >End date</label
+            >
+            <input
+              type="date"
+              id="end-date"
+              class="block w-full shadow-lg rounded-md bg-white pl-2 py-2 text-base text-gray-900 outline-2 outline-gray-500 placeholder:text-gray-400"
+            />
+          </div>
+        </div>
+
+        <div class="px-3 py-3 grid">
+          <label for="Description" class="text-3xl text-gray-900"
+            >Description</label
+          >
+          <textarea
+            id="Description"
+            required
+            class="placeholder:text-gray-400 pl-2 bg-white text-base outline-2 w-full rounded-lg shadow-lg block outline-gray-500 py-2"
+            placeholder="your message"
+          ></textarea>
+        </div>
+
+        <div class="mt-2 px-3 py-3">
+          <label class="text-3xl text-gray-900">Technologies</label>
+          <div class="grid-cols-2 mt-6 justify-items-center gap-y-5 grid">
+            <div class="flex items-center">
+              <input type="checkbox" id="nodejs" /><label
+                class="text-medium ms-6"
+                for="nodejs"
+                >Node JS</label
+              >
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="nextjs" /><label
+                class="ms-6 text-medium"
+                for="nextjs"
+                >Next JS</label
+              >
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="reactjs" /><label
+                class="ms-6"
+                for="reactjs"
+                >React JS</label
+              >
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" id="typescript" /><label
+                class="ms-6"
+                for="typescript"
+                >TypeScript</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="px-3 py-3 mt-5 grid">
+          <label for="projectImage" class="text-2xl text-gray-900 text-medium"
+            >Upload Image</label
+          >
+          <input
+            type="file"
+            id="projectImage"
+            class="mt-4 w-90 justify-items-center bg-white text-gray-500 border-1 shadow-lg file:mr-8 file:py-2 file:px-4 file:border-1 file:text-sm file:font-semibold file:bg-gray-50 file:text-blue-700 hover:file:bg-gray-900"
+          />
+        </div>
+
+        <button
+          class="bg-black text-white rounded-lg px-8 py-2 cursor-pointer hover:bg-gray-800 transition ml-160 mb-10"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+
+      <!-- Tempat munculnya card -->
+      <div
+        id="projects-container"
+        class="shadow-black container mx-auto px-30 bg-gray-200 rounded-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-5 mb-5 p-5"
+      ></div>
+    </div>
+
+    <script src="/asset/js/project.js"></script>
+  </body>
+</html>
